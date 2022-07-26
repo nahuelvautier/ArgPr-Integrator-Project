@@ -1,0 +1,12 @@
+.social-media-img {
+  margin: 2.5rem 1rem 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.social-media-img img {
+  margin: 0 .25rem;
+  height: 2.25rem;
+  width: 2.5rem;
+}
