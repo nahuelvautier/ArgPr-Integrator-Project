@@ -1,12 +1,13 @@
 .header-container {
   width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  white-space: nowrap;
   background-color: #333;
 }
 
-.header-container div {
-  width: 50%;
+.header-item {
+  display: flex;
+  justify-content: space-between;
 }
+
+
 

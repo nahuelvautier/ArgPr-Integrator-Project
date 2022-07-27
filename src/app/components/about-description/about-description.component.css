@@ -1,0 +1,11 @@
+.about-description-wrapper h2 {
+  margin: 5rem 0 2rem 3rem;
+}
+
+.about-description-wrapper div {
+  padding-right: 2rem;
+}
+
+.about-description-wrapper p {
+  margin: 0 0 .25rem 3rem;
+}
