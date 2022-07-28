@@ -1,0 +1,40 @@
+.experience-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+.experience-container h2 {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.experience-item-wrapper h3 {
+  margin: 3.5rem 0 0 1rem;
+}
+
+.experience-item {
+  display: flex;
+}
+
+.experience-item figure {
+  padding: 1rem 3rem;
+}
+
+.experience-item img {
+  height: 10rem;
+  width: 10rem;
+  opacity: .75;
+}
+
+.experience-item p, .experience-item h4 {
+  margin: 1rem 0 0 8rem;
+}
+
+.experience-item h4 {
+  margin-top: -1.25rem;
+}
+
+.experience-item ul {
+  margin: 3rem 0 0 10rem;
+}
