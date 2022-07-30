@@ -10,6 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProfilePhotoComponent } from './components/profile-photo/profile-photo.component';
 import { AboutDescriptionComponent } from './components/about-description/about-description.component';
 import { ProfessionalExperienceComponent } from './components/professional-experience/professional-experience.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProfessionalExperienceComponent } from './components/professional-exper
     AboutComponent,
     ProfilePhotoComponent,
     AboutDescriptionComponent,
-    ProfessionalExperienceComponent
+    ProfessionalExperienceComponent,
+    EducationComponent
   ],
   imports: [
     BrowserModule
