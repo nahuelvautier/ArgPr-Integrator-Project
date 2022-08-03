@@ -11,6 +11,9 @@ import { ProfilePhotoComponent } from './components/profile-photo/profile-photo.
 import { AboutDescriptionComponent } from './components/about-description/about-description.component';
 import { ProfessionalExperienceComponent } from './components/professional-experience/professional-experience.component';
 import { EducationComponent } from './components/education/education.component';
+import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft-skills.component';
+
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,12 @@ import { EducationComponent } from './components/education/education.component';
     ProfilePhotoComponent,
     AboutDescriptionComponent,
     ProfessionalExperienceComponent,
-    EducationComponent
+    EducationComponent,
+    HardSoftSkillsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
