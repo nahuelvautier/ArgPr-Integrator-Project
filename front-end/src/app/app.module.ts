@@ -15,6 +15,7 @@ import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     ProfessionalExperienceComponent,
     EducationComponent,
     HardSoftSkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
