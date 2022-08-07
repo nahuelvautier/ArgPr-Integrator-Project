@@ -12,7 +12,9 @@ html {
 
 body {
   margin: 0 auto;
-  display: block;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
   width: 100%;
   max-width: var(--container-width);
   overflow-x: hidden;

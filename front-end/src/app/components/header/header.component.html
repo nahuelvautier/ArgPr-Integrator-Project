@@ -1,7 +1,14 @@
 <header class="header-container">
   <div class="header-item">
-    <div><app-app-logo></app-app-logo></div>
-    <div><app-social-media></app-social-media></div>
+    <div class="first-wrapper">
+      <app-app-logo></app-app-logo>
+    </div>
+    <div class="second-wrapper">
+      <div>
+        <app-social-media></app-social-media>
+      </div>
+      <button type="button" (click)="login()">Ingresar</button>
+    </div>
   </div>
-    <app-banner></app-banner>
+  <app-banner></app-banner>
 </header>
