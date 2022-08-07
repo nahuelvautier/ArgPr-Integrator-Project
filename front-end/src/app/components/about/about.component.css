@@ -3,3 +3,31 @@
   flex-flow: row nowrap;
   justify-content: space-evenly;
 }
+
+.profile-figure {
+  margin: -3.5rem 0 0 1rem;
+}
+
+.profile-figure figcaption {
+  margin: -.25rem 0 0 .25rem;
+  white-space: nowrap;
+}
+
+.profile-photo-img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  border: thick black;
+}
+
+.about-description-wrapper h2 {
+  margin: 5rem 0 2rem 3rem;
+}
+
+.about-description-wrapper div {
+  padding-right: 2rem;
+}
+
+.about-description-wrapper p {
+  margin: 0 0 .25rem 3rem;
+}
