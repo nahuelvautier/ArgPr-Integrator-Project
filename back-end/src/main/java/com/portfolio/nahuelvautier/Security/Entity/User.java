@@ -34,6 +34,7 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
     public User() {
+        
     }
 
     public User(String name, String userName, String email, String password) {
