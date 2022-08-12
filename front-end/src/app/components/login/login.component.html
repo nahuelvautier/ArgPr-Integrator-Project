@@ -1,9 +1,15 @@
 <div class="contact-form-wrapper">
   <h2>Bienvenido!</h2>
-  <form class="contact-form" action="" method="POST" autocomplete="off">
-    <legend>Ingresa tus datos</legend>
-    <input type="text" name="user" placeholder="Usuario">
-    <input type="password" name="password" placeholder="Contraseña">
-    <input type="submit" value="Log in">
+  <form class="contact-form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+    <div class="contact-form-item">
+      <legend>Ingresa los datos pedidos a continuación</legend>
+    </div>
+    <div class="contact-form-item">
+      <input type="text" name="userName" placeholder="Usuario" [(ngModel)]="userName" required>
+      <input type="password" name="password" placeholder="Contraseña" [(ngModel)]="password" required>
+    </div>
+    <div class="contact-form-item">
+      <input type="submit" value="Log in">
+    </div>
   </form>
 </div>

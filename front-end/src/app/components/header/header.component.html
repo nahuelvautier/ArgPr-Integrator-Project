@@ -7,7 +7,8 @@
       <div>
         <app-social-media></app-social-media>
       </div>
-      <button type="button" (click)="login()">Ingresar</button>
+      <button type="button" (click)="login()" *ngIf="!isLogged">Ingresar</button>
+      <button type="button" (click)="logout()" *ngIf="isLogged">Cerrar sesión</button>
     </div>
   </div>
   <app-banner></app-banner>
