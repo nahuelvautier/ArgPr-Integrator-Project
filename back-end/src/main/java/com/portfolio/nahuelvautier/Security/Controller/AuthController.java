@@ -1,5 +1,6 @@
 package com.portfolio.nahuelvautier.Security.Controller;
 
+import com.portfolio.nahuelvautier.Controller.Msg;
 import com.portfolio.nahuelvautier.Security.DTO.JwtDto;
 import com.portfolio.nahuelvautier.Security.DTO.LoginUser;
 import com.portfolio.nahuelvautier.Security.DTO.NewUser;

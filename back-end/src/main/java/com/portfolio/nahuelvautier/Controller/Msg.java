@@ -1,4 +1,4 @@
-package com.portfolio.nahuelvautier.Security.Controller;
+package com.portfolio.nahuelvautier.Controller;
 
 public class Msg {
     private String msg;
