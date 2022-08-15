@@ -1,53 +1,27 @@
 <section class="experience-container">
-  <h2>Experiencia Laboral</h2>
-  <div class="experience-item-wrapper">
-    <h3>Micaela Castanó</h3>
+  <h2>Experiencia Profesional / Laboral</h2>
+  <div class="experience-item-wrapper" *ngFor="let Experience of experience">
+
+    <div>
+      <h3>{{Experience.expSupplier}}</h3>
+    </div>
     <div class="experience-item">
+
       <div>
         <figure>
-          <img src="../../../assets/micaela.png" alt="Foto del Logo de Micaela Castanó" />
+          <img src={{Experience.expImage}}>
         </figure>
       </div>
+
       <div>
-        <h4>Puesto: Desarrollador Web Freelance</h4>
-        <p>
-          01/Noviembre/2021 - actualidad
-          <br><br>
-          Landing Page hecha para una cliente en HTML, CSS y Javascript vanilla.
-          <br>
-          Por el momento la web está fuera de servicio hasta solucionar términos
-          de prestación:
-          <br><br>
-          <a href="https://micaelacastano.netlify.app/" target="_blank">https://micaelacastano.netlify.app/</a>
-        </p>
+        <h4>{{Experience.expName}}</h4>
+        <div>
+          <p>{{Experience.expDescription}}</p>
+          <a href={{Experience.expReference}} target="_blank">{{Experience.expReference}}</a>
+        </div>
       </div>
+
     </div>
-    <h3>Comahue Seguridad Privada S.A.</h3>
-    <div class="experience-item">
-      <div>
-        <figure>
-          <img src="../../../assets/comahue.jpg" alt="Foto del logo de Comahue Seguridad Privada S.A." />
-        </figure>
-      </div>
-      <div>
-        <h4>Puesto: Vigilador general</h4>
-        <p>
-          09/Octubre/2015 - actualidad
-          <br><br>
-          Personal de seguridad a cargo de llevar a cabo tareas a desarrollar
-          solicitadas por la empresa.
-          <br>
-          Entre ellas se encuentran:
-        </p>
-        <ul>
-          <li>Prevención de hurtos y conflictos</li>
-          <li>Resolución de conflictos mediante disuación.</li>
-          <li>Control de ingreso vehicular.</li>
-          <li>Control de inventario.</li>
-          <li>Recorridos de inspección por el predio asignado.</li>
-          <li>Manuscritura en el libro de actas de las novedades pertinentes.</li>
-        </ul>
-      </div>
-    </div>
+
   </div>
 </section>

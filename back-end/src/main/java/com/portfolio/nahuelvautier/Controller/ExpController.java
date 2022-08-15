@@ -40,7 +40,14 @@ public class ExpController {
             return new ResponseEntity(new Msg("Esa experiencia ya existe."), HttpStatus.BAD_REQUEST);
         }
         
-        Experience experience = new Experience(dtoExperience.getExpName(), dtoExperience.getExpDescription());
+        Experience experience = new Experience(
+                dtoExperience.getExpName(),
+                dtoExperience.getExpDescription(),
+                dtoExperience.getExpReference(),
+                dtoExperience.getExpImage(),
+                dtoExperience.getExpSupplier()
+        );
+        
         expService.save(experience);
         
         return new ResponseEntity(new Msg("Experiencia agregada con éxito."), HttpStatus.OK);

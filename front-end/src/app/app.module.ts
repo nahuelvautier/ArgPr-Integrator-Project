@@ -20,10 +20,14 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { InterceptorProvider } from './services/interceptor-service';
+import { NewExperienceComponent } from './components/professional-experience/new-experience.component';
+import { EditExperienceComponent } from './components/professional-experience/edit-experience.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'new-experience', component: NewExperienceComponent },
+  { path: 'edit-experience/:id', component: EditExperienceComponent }
 ];
 
 @NgModule({
@@ -41,6 +45,8 @@ const routes: Routes = [
     FooterComponent,
     HomeComponent,
     LoginComponent,
+    NewExperienceComponent,
+    EditExperienceComponent,
   ],
   imports: [
     BrowserModule,

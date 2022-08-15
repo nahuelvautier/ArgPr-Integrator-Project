@@ -12,13 +12,25 @@ public class Experience {
     private int id;
     private String expName;
     private String expDescription;
+    private String expReference;
+    private String expImage;
+    private String expSupplier;
 
     public Experience() {
     }
 
-    public Experience(String expName, String expDescription) {
-        this.expName = expName;
-        this.expDescription = expDescription;
+    public Experience(
+            String expName,
+            String expDescription,
+            String expReference,
+            String expImage,
+            String expSupplier
+        ) {
+            this.expName = expName;
+            this.expDescription = expDescription;
+            this.expReference = expReference;
+            this.expImage = expImage;
+            this.expSupplier = expSupplier;
     }
 
     public int getId() {
@@ -44,6 +56,28 @@ public class Experience {
     public void setExpDescription(String expDescription) {
         this.expDescription = expDescription;
     }
-    
-    
+
+    public String getExpReference() {
+        return expReference;
+    }
+
+    public void setExpReference(String expReference) {
+        this.expReference = expReference;
+    }
+
+    public String getExpImage() {
+        return expImage;
+    }
+
+    public void setExpImage(String expImage) {
+        this.expImage = expImage;
+    }
+
+    public String getExpSupplier() {
+        return expSupplier;
+    }
+
+    public void setExpSupplier(String expSupplier) {
+        this.expSupplier = expSupplier;
+    }
 }

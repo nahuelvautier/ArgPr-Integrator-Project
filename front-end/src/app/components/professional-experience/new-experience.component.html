@@ -1,0 +1,7 @@
+<div>
+  <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+    <input type="text" name="expName" [(ngModel)]="expName" required>
+    <input type="text" name="expDescription" [(ngModel)]="expDescription" required>
+    <input type="submit" value="Agregar experiencia">
+  </form>
+</div>

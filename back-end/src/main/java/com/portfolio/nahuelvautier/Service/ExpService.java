@@ -30,7 +30,7 @@ public class ExpService {
         expRepository.save(experience);
     }
     
-    public void delete(int id ){
+    public void delete(int id){
         expRepository.deleteById(id);
     }
     
