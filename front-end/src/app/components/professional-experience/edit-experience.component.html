@@ -1,7 +1,15 @@
 <div *ngIf="experience">
-  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-    <input type="text" name="expName" [(ngModel)]="experience.expName" required>
-    <input type="text" name="expDescription" [(ngModel)]="experience.expDescription" required>
-    <input type="submit" value="Agregar experiencia">
+  <form class="edit-form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <input type="text" name="expName" placeholder="Ingresa el nombre del puesto" [(ngModel)]="experience.expName"
+      required>
+    <input type="text" name="expSupplier" placeholder="Ingresa el nombre del empleador"
+      [(ngModel)]="experience.expSupplier" required>
+    <input type="text" name="expReference" placeholder="Ingresa el link de la página web de la empresa"
+      [(ngModel)]="experience.expReference" required>
+    <input type="text" name="expImage" placeholder="Ingresa URL con logo de la empresa "
+      [(ngModel)]="experience.expImage" required>
+    <input type="text" name="expDescription" placeholder="Ingresa el nombre de" [(ngModel)]="experience.expDescription"
+      required>
+    <input type="submit" value="Editar experiencia">
   </form>
 </div>

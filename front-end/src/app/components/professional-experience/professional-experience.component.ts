@@ -30,12 +30,16 @@ export class ProfessionalExperienceComponent implements OnInit {
   }
 
   delete(id?: number) {
-    if(id !== undefined) {
-      this.expService.delete(id).subscribe(data => {
-        this.loadExperience();
-      });
-    } else {
-      alert("No se pudo eliminar la experiencia especificada.");
+    let deleteExp = confirm("Seguro que deseas eliminar la experiencia seleccionada?");
+
+    if (deleteExp) {
+        if(id !== undefined) {
+        this.expService.delete(id).subscribe(data => {
+          this.loadExperience();
+        });
+      } else {
+        alert("No se pudo eliminar la experiencia especificada.");
+      }
     }
   }
 }
