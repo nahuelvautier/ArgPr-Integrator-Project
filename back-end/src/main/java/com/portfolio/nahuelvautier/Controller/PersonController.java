@@ -29,14 +29,14 @@ public class PersonController {
     @PostMapping("persons/create")
     public String createPerson(@RequestBody Person person) {
         ipersonService.savePerson(person);
-        return "Usuario creado correctamente.";
+        return "Usuario creado con éxito..";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("persons/delete/{id}")
     public String deletePerson(@PathVariable Long id) {
         ipersonService.deletePerson(id);
-        return "Usuario eliminado correctamente.";
+        return "Usuario eliminado con éxito..";
     }
     
     @PreAuthorize("hasRole('ADMIN')")

@@ -26,6 +26,10 @@ public class ExpService {
         return expRepository.findByExpName(expName);
     }
     
+    public Optional<Experience> getByExpDescription(String expDescription) {
+        return expRepository.findByExpDescription(expDescription);
+    }
+    
     public void save(Experience experience) {
         expRepository.save(experience);
     }
@@ -42,5 +46,7 @@ public class ExpService {
         return expRepository.existsByExpName(expName);
     }
     
-    
+    public boolean existsByExpDescription(String expDescription) {
+        return expRepository.existsByExpDescription(expDescription);
+    }
 }

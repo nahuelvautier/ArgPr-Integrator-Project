@@ -1,10 +1,10 @@
 export class Person {
   id?: number;
-  name: String;
-  lastName: String;
-  image: String;
+  name: string;
+  lastName: string;
+  image: string;
 
-  constructor (name: String, lastName: String, image: String) {
+  constructor (name: string, lastName: string, image: string) {
     this.name = name;
     this.lastName = lastName;
     this.image = image;

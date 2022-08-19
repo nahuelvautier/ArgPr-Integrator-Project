@@ -1,0 +1,15 @@
+<div *ngIf="education">
+  <form class="edit-form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <input type="text" name="eduCareer" placeholder="Ingresa el nombre del título obtenido"
+      [(ngModel)]="education.eduCareer" required>
+    <input type="text" name="eduName" placeholder="Ingresa el nombre de la institución" [(ngModel)]="education.eduName"
+      required>
+    <input type="text" name="eduExpedition" placeholder="Ingresa la fecha de expedición MM/DD"
+      [(ngModel)]="education.eduExpedition" required>
+    <input type="text" name="eduImage" placeholder="Ingresa URL con logo de la institución"
+      [(ngModel)]="education.eduImage" required>
+    <input type="text" name="eduDescription" placeholder="Ingresa la descripción de la institución"
+      [(ngModel)]="education.eduDescription" required>
+    <input type="submit" value="Editar educación">
+  </form>
+</div>

@@ -14,8 +14,32 @@
   flex-flow: row nowrap;
 }
 
+.education-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.btn-wrapper {
+  white-space: nowrap;
+}
+
+.education-menu button {
+  padding: .5rem;
+  margin: 0 .5rem;
+  border-radius: 50%;
+}
+
+.education-menu button:hover {
+  cursor: pointer;
+}
+
 .education-item figure {
-  margin: 0 2rem;
+  margin: 0 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .education-item img {

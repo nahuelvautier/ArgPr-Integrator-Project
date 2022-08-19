@@ -21,11 +21,13 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { InterceptorProvider } from './services/interceptor-service';
 import { EditExperienceComponent } from './components/professional-experience/edit-experience.component';
+import { EditEducationComponent } from './components/education/edit-education.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'experience/update/:id', component: EditExperienceComponent }
+  { path: 'experience/update/:id', component: EditExperienceComponent },
+  { path: 'education/update/:id', component: EditEducationComponent }
 ];
 
 @NgModule({
@@ -44,6 +46,7 @@ const routes: Routes = [
     HomeComponent,
     LoginComponent,
     EditExperienceComponent,
+    EditEducationComponent,
   ],
   imports: [
     BrowserModule,

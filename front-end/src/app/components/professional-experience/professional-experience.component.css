@@ -34,10 +34,15 @@
   align-items: baseline;
 }
 
+.btn-wrapper {
+  white-space: nowrap;
+}
+
 .experience-menu button {
   padding: .5rem;
   margin: 0 .5rem;
   border-radius: 50%;
+
 }
 
 .experience-menu button:hover {

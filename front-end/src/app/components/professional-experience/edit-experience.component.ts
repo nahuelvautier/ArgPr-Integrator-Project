@@ -12,12 +12,12 @@ export class EditExperienceComponent implements OnInit {
   experience: Experience = null;
   constructor(
     private expService: ExpServiceService,
-    private activateRouter: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    const id = this.activateRouter.snapshot.params['id'];
+    const id = this.activatedRoute.snapshot.params['id'];
     this.expService.detail(id).subscribe(data => {
       this.experience = data;
     }, err => {
@@ -27,7 +27,7 @@ export class EditExperienceComponent implements OnInit {
   }
 
   onUpdate(): void {
-    const id = this.activateRouter.snapshot.params['id'];
+    const id = this.activatedRoute.snapshot.params['id'];
     this.expService.update(id, this.experience).subscribe(data => {
       this.router.navigate(['']);
     }, err => {

@@ -3,7 +3,6 @@ package com.portfolio.nahuelvautier.Controller;
 import com.portfolio.DTO.DtoExperience;
 import com.portfolio.nahuelvautier.Entity.Experience;
 import com.portfolio.nahuelvautier.Service.ExpService;
-import java.util.HashSet;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +50,8 @@ public class ExpController {
             return new ResponseEntity(new Msg("El nombre de la experiencia es requerido."), HttpStatus.BAD_REQUEST);
         }
         
-        if(expService.existsByExpName(dtoExperience.getExpName())) {
-            return new ResponseEntity(new Msg("Esa experiencia ya existe."), HttpStatus.BAD_REQUEST);
+        if(expService.existsByExpDescription(dtoExperience.getExpDescription())) {
+            return new ResponseEntity(new Msg("La descripción es identica a una de las existentes."), HttpStatus.BAD_REQUEST);
         }
         
         Experience experience = new Experience(
@@ -72,11 +71,7 @@ public class ExpController {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExperience dtoExperience) {
         if(!expService.existsById(id)) {
-            return new ResponseEntity(new Msg("El ID no existe"), HttpStatus.BAD_REQUEST);
-        }
-        
-        if(expService.existsByExpName(dtoExperience.getExpName()) && expService.getByExpName(dtoExperience.getExpName()).get().getId() != id) {
-            return new ResponseEntity(new Msg("Esa experiencia ya existe."), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("No existe el ID seleccionado"), HttpStatus.BAD_REQUEST);
         }
         
         if(StringUtils.isBlank(dtoExperience.getExpName())) {
@@ -99,7 +94,7 @@ public class ExpController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if(!expService.existsById(id)) {
-            return new ResponseEntity(new Msg("El ID no existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("No existe el ID seleccionado"), HttpStatus.BAD_REQUEST);
         }
         
         expService.delete(id);
