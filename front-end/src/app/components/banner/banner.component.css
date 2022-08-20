@@ -1,7 +1,7 @@
 .banner-item {
-  margin-bottom: -.25rem;
-  height: 50vh;
-  width: 100%;
-  min-width: 360px;
-  max-width: 1366px;
+  margin-bottom: -.5rem;
+  height: 65vh;
+  width: 100vw;
+  min-width: 576px;
+  max-width: 1992px;
 }

@@ -1,7 +1,7 @@
 /* Reset */
 :root {
   --font-size: 16px;
-  --container-width: 1366px;
+  --container-width: 1992px;
 }
 
 html {
@@ -12,9 +12,6 @@ html {
 
 body {
   margin: 0 auto;
-  display: flex;
-  flex-flow: column wrap;
-  align-content: center;
   width: 100%;
   max-width: var(--container-width);
   overflow-x: hidden;

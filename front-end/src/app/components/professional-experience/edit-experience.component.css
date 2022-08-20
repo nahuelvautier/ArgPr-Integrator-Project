@@ -1,34 +1,63 @@
+.edit-form-wrapper {
+  margin: 10% auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-form-wrapper h2 {
+  margin-bottom: 2rem;
+}
+
 .edit-form {
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 100%;
 }
 
 .edit-form > * {
-  padding: 0.5rem;
-  margin: 1rem auto;
+  margin: 0 auto;
+  padding: .5rem;
   display: block;
-  width: 100%;
+  width: 90%;
+  min-width: 10rem;
+  max-width: 50rem;
 }
 
 .edit-form textarea {
   resize: none;
 }
 
-.edit-form legend,
-.edit-form-response {
+.edit-form legend {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
 }
 
+.edit-form label,
 .edit-form input,
 .edit-form textarea {
   font-size: 1rem;
-  font-family: sans-serif;
+}
+
+.edit-form input,
+.edit-form textarea {
+  border: 3px solid #000;
+}
+
+.edit-form label {
+  margin-top: 1rem;
+}
+
+.edit-form textarea {
+  height: 30vh;
 }
 
 .edit-form input[type="submit"] {
+  margin-top: 1rem;
   width: 50%;
   font-weight: bold;
   cursor: pointer;

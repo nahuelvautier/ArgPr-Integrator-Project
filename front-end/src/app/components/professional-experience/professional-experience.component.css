@@ -1,5 +1,6 @@
 .experience-container {
   padding-bottom: 3.5rem;
+  width: 100%;
 }
 
 .experience-container h2 {
@@ -7,44 +8,91 @@
 }
 
 .experience-item-wrapper h3 {
-  margin: 3.5rem 0 0 1rem;
+  margin-top: 3.5rem;
+  font-size: 125%;
+  text-align: center;
 }
 
 .experience-item {
   display: flex;
-}
-
-.experience-item figure {
-  padding: 1rem 3rem;
+  flex-flow: column wrap;
+  align-content: center;
+  text-align: center;
 }
 
 .experience-item img {
-  height: 10rem;
-  width: 10rem;
+  width: 100%;
+  min-height: 7rem;
+  min-width: 7rem;
+  max-height: 10rem;
+  max-width: 10rem;
   opacity: .75;
-}
-
-.experience-item p, .experience-item h4, .experience-item a {
-  margin: 3rem 0 1rem 3rem;
-}
-
-.experience-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
 .btn-wrapper {
   white-space: nowrap;
 }
 
+.experience-menu {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
 .experience-menu button {
   padding: .5rem;
   margin: 0 .5rem;
   border-radius: 50%;
-
 }
 
 .experience-menu button:hover {
   cursor: pointer;
+}
+
+.experience-item h4 {
+  text-align: left;
+}
+
+.experience-item p,  .experience-item a {
+  margin-top: 1rem;
+}
+
+/*MQ*/
+@media screen and (min-width: 576px) {
+  .experience-item h4 {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .experience-container {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .experience-item-wrapper h3 {
+    margin: 3.5rem 0 0 1rem;
+    font-size: 125%;
+    text-align: left;
+  }
+
+  .experience-item {
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: left;
+  }
+
+  .experience-item figure {
+    padding: 1rem 3rem;
+  }
+
+  .experience-item p, .experience-item h4, .experience-item a {
+    margin: 2rem 0 1rem 5rem;
+  }
+
+  .experience-item h4 {
+    margin-bottom: 0;
+    text-align: left;
+  }
 }

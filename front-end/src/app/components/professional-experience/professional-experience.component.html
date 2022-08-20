@@ -1,24 +1,24 @@
-<section class="experience-container">
+<section class="experience-container    container">
   <h2>Experiencia Profesional / Laboral</h2>
   <div class="experience-item-wrapper" *ngFor="let Experience of experience">
 
     <div>
       <h3>{{Experience.expSupplier}}</h3>
     </div>
-    <div class="experience-item">
+    <div class="experience-item    row">
 
-      <div>
+      <div class="col-md-4">
         <figure>
           <img src={{Experience.expImage}}>
         </figure>
       </div>
 
-      <div>
+      <div class="col-md-8">
         <div class="experience-menu">
-          <div>
+          <div class="col-md-11    col-lg-10">
             <h4>{{Experience.expName}}</h4>
           </div>
-          <div *ngIf="isLogged" class="btn-wrapper">
+          <div *ngIf="isLogged" class="btn-wrapper    col-md-1    col-lg-2">
             <button routerLink="experience/update/{{Experience.id}}" type="button"><i class="bi bi-pencil"></i></button>
             <button (click)="(delete(Experience.id))" type="button"><i class="bi bi-trash3"></i></button>
           </div>

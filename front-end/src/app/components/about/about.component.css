@@ -1,34 +1,64 @@
 .about-container {
   padding-bottom: 3.5rem;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+  flex-flow: column wrap;
+  align-content: center;
 }
 
 .profile-figure {
-  margin: -3.5rem 0 0 1rem;
+  margin: -3.5rem 0 0 0;
 }
 
 .profile-figure figcaption {
   margin: -.25rem 0 0 .25rem;
-  white-space: nowrap;
+}
+
+.about-container h1 {
+  font-size: 180%;
 }
 
 .profile-photo-img {
-  height: 10rem;
-  width: 10rem;
+  height: 7.5rem;
+  width: 7.5rem;
+  min-height: 5rem;
+  min-width: 5rem;
+  max-height: 10rem;
+  max-width: 10rem;
   border-radius: 50%;
   border: thick black;
 }
 
 .about-description-wrapper h2 {
-  margin: 5rem 0 2rem 3rem;
-}
-
-.about-description-wrapper div {
-  padding-right: 2rem;
+  margin: 2rem 0 2rem 3rem;
 }
 
 .about-description-wrapper p {
-  margin: 0 0 .25rem 3rem;
+  padding: 0 2rem;
+}
+
+/*MQ*/
+@media screen and (min-width: 576px) {
+  .profile-figure {
+    margin: -3.5rem 0 0 1rem;
+  }
+
+  .profile-figure figcaption {
+    white-space: nowrap;
+    margin: -.25rem 0 0 -1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-container {
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
+  .about-description-wrapper h2 {
+    margin: 7rem 0 3rem 3rem;
+  }
+
+  .about-description-wrapper p {
+    margin-top: -1rem;
+  }
 }

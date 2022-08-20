@@ -1,30 +1,35 @@
-<section class="education-container">
+<section class="education-container    container">
   <h2>Educación</h2>
   <div class="education-items-wrapper" *ngFor="let Education of education">
 
-    <div class="education-item">
-      <div>
+    <div class="education-item    row">
+
+      <div class="col-md-4">
         <figure>
           <img src="{{Education.eduImage}}">
           <figcaption>{{Education.eduName}}</figcaption>
         </figure>
       </div>
-      <div>
-        <div class="education-menu">
-          <div>
+
+      <div class="col-md-8">
+
+        <div class="education-menu    row">
+          <div class="col-8    col-md-11    col-lg-10">
             <h3>Oratoria - Escuela de capacitación y negocios</h3>
+            <h4>{{Education.eduName}}</h4>
           </div>
-          <div *ngIf="isLogged" class="btn-wrapper">
+          <div *ngIf="isLogged" class="btn-wrapper    col-4     col-md-1    col-lg-2">
             <button routerLink="education/update/{{Education.id}}" type="button"><i class="bi bi-pencil"></i></button>
             <button (click)="(delete(Education.id))" type="button"><i class="bi bi-trash3"></i></button>
           </div>
         </div>
-        <h4>{{Education.eduName}}</h4>
-        <p>Expedición: {{Education.eduExpedition}}</p>
-        <p>
-          {{Education.eduDescription}}
-        </p>
+        <div>
+          <p>Expedición: {{Education.eduExpedition}}</p>
+          <p>{{Education.eduDescription}}</p>
+        </div>
+
       </div>
+
     </div>
 
   </div>
