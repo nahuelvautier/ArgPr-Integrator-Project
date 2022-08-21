@@ -2,16 +2,18 @@
 :root {
   --font-size: 16px;
   --container-width: 1992px;
+  --main-color: #283940;
+  --main-model-color: #43636f;
 }
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: var(--font-size);
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
   max-width: var(--container-width);
   overflow-x: hidden;
@@ -23,4 +25,52 @@ body {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  color: #fefefe;
+  background-color: var(--main-model-color);
+}
+
+h1, h2, h3, h4, h5, h6, legend, figcaption, p {
+  font-family: sans-serif;
+  color: var(--main-color);
+}
+
+hr {
+  margin: auto;
+  height: .15rem;
+  width: 80%;
+  background-color: var(--main-color);
+}
+
+a {
+  font-weight: bold;
+  color: var(--main-model-color);
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: #6796a8;
+}
+
+button {
+  color: #dcdcdc;
+  background-color: var(--main-color);
+  transition: background-color .1s ease;
+}
+
+button:hover {
+  color: #fefefe;
+  background-color: var(--main-model-color);
+}
+
+input[type=submit] {
+  color: #dcdcdc;
+  background-color: var(--main-color);
+}
+
+input[type=submit]:hover {
+  color: #fefefe;
+  background-color: var(--main-model-color);
 }

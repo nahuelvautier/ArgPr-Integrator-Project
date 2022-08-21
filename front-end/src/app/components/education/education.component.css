@@ -1,9 +1,10 @@
-.education-container h2 {
-  margin: 2rem 0 2rem 2rem;
+.education-container {
+  margin: 1rem auto;
+  width: 80%;
 }
 
 .education-items-wrapper {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .education-menu {
@@ -15,10 +16,31 @@
   white-space: nowrap;
 }
 
+.btn-wrapper button:nth-child(1) {
+  color: #eeeeee;
+  background-color: #08cb08;
+}
+
+.btn-wrapper button:nth-child(2) {
+  color: #eeeeee;
+  background-color: #b70303;
+}
+
+.btn-wrapper button:nth-child(1):hover {
+  color: #fefefe;
+  background-color: #08de08;
+}
+
+.btn-wrapper button:nth-child(2):hover {
+  color: #fefefe;
+  background-color: #db0505;
+}
+
 .education-menu button {
-  padding: .5rem;
-  margin: 0 .5rem;
-  border-radius: 50%;
+  height: 2.5rem;
+  width: 4rem;
+  border-radius: 20%;
+  border: thick solid #fefefe;
 }
 
 .education-menu button:hover {
@@ -42,4 +64,14 @@
   margin-top: .25rem;
   font-weight: bold;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .education-container {
+    width: 100%;
+  }
+
+  .education-container h2 {
+    margin: 2rem 0 2rem 2rem;
+  }
 }

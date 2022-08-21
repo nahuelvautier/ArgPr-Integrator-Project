@@ -1,7 +1,12 @@
 .banner-item {
   margin-bottom: -.5rem;
-  height: 65vh;
+  height: 12rem;
   width: 100vw;
-  min-width: 576px;
   max-width: 1992px;
+}
+
+@media screen and (min-width: 768px) {
+  .banner-item {
+    height: 55vh;;
+  }
 }

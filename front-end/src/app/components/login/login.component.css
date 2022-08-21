@@ -1,6 +1,61 @@
-.login-form-wrapper > * {
+.login-form-wrapper {
+  margin: 10% auto;
+  width: 100%;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
+  justify-content: center;
   align-items: center;
+}
+
+.login-form-wrapper h2 {
+  margin-bottom: 2rem;
+}
+
+.login-form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.login-form * {
+  margin: .75rem auto;
+  padding: .5rem;
+  display: block;
+  width: 90%;
+  min-width: 10rem;
+}
+
+.login-form legend {
+  margin: 1rem auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-form input {
+  font-size: 1rem;
+}
+
+.login-form input {
+  border: 3px solid #43636f;
+}
+
+.login-form label {
+  margin-top: 1rem;
+}
+
+.login-form textarea {
+  height: 30vh;
+}
+
+.login-form input[type="submit"] {
+  margin-top: 1rem;
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-form *::placeholder {
+  color: #000;
 }

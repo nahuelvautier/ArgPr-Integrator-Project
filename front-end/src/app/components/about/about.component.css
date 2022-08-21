@@ -1,16 +1,18 @@
 .about-container {
-  padding-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  width: 80%;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
 }
 
 .profile-figure {
-  margin: -3.5rem 0 0 0;
+  margin-top: -3.5rem;
 }
 
 .profile-figure figcaption {
-  margin: -.25rem 0 0 .25rem;
+  margin-top: -.25rem;
 }
 
 .about-container h1 {
@@ -25,40 +27,44 @@
   max-height: 10rem;
   max-width: 10rem;
   border-radius: 50%;
-  border: thick black;
 }
 
 .about-description-wrapper h2 {
-  margin: 2rem 0 2rem 3rem;
+  margin: 2rem 0;
 }
 
 .about-description-wrapper p {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 /*MQ*/
 @media screen and (min-width: 576px) {
-  .profile-figure {
-    margin: -3.5rem 0 0 1rem;
-  }
-
   .profile-figure figcaption {
     white-space: nowrap;
-    margin: -.25rem 0 0 -1rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .about-container {
+    width: 90%;
     flex-flow: row nowrap;
     justify-content: space-evenly;
   }
 
   .about-description-wrapper h2 {
-    margin: 7rem 0 3rem 3rem;
+    margin-top: 8.5rem;
   }
 
-  .about-description-wrapper p {
-    margin-top: -1rem;
+  .about-description-wrapper h2, .about-description-wrapper p {
+    margin-left: 1.5rem;
+  }
+
+  .profile-figure {
+    margin-top: -5rem;
+  }
+
+  .profile-photo-img {
+    height: 10rem;
+    width: 10rem;
   }
 }

@@ -10,6 +10,7 @@
 
 .edit-form-wrapper h2 {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .edit-form {
@@ -24,7 +25,6 @@
   display: block;
   width: 90%;
   min-width: 10rem;
-  max-width: 50rem;
 }
 
 .edit-form textarea {
@@ -32,6 +32,7 @@
 }
 
 .edit-form legend {
+  margin: 1rem auto;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -45,11 +46,13 @@
 
 .edit-form input,
 .edit-form textarea {
-  border: 3px solid #000;
+  border: 3px solid #43636f;
 }
 
 .edit-form label {
   margin-top: 1rem;
+  font-weight: bold;
+  color: #283940;
 }
 
 .edit-form textarea {
