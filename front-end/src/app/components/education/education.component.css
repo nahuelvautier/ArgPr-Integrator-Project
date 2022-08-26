@@ -16,6 +16,11 @@
   white-space: nowrap;
 }
 
+.create-btn button {
+  padding: .25rem;
+  white-space: nowrap;
+}
+
 .btn-wrapper button:nth-child(1) {
   color: #eeeeee;
   background-color: #08cb08;
@@ -72,6 +77,6 @@
   }
 
   .education-container h2 {
-    margin: 2rem 0 2rem 2rem;
+    margin: 2rem 0;
   }
 }

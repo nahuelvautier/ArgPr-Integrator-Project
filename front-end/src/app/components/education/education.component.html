@@ -1,5 +1,10 @@
 <section class="education-container    container">
-  <h2>Educación</h2>
+  <div>
+    <h2>Educación</h2>
+  </div>
+  <div *ngIf="isLogged" class="col-1    col-sm-2    create-btn">
+    <button routerLink="education/create" type="button">Añadir educación</button>
+  </div>
   <div class="education-items-wrapper" *ngFor="let Education of education">
 
     <div class="education-item    row">
@@ -15,7 +20,7 @@
 
         <div class="education-menu    row">
           <div class="col-8    col-md-11    col-lg-10">
-            <h3>Oratoria - Escuela de capacitación y negocios</h3>
+            <h3>{{Education.eduCareer}}</h3>
             <h4>{{Education.eduName}}</h4>
           </div>
           <div *ngIf="isLogged" class="btn-wrapper    col-4     col-md-1    col-lg-2">

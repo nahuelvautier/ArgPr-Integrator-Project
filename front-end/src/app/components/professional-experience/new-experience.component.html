@@ -1,0 +1,22 @@
+<div class="create-form-wrapper">
+  <h2>Segmento para crear nueva experiencia</h2>
+  <form class="create-form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+    <legend>Por favor llena los campos según corresponda, todos los campos son obligatorios</legend>
+    <label for="expName">Nombre del puesto:</label>
+    <input id="expName" type="text" name="expName" placeholder="Ingresa el nombre del puesto" [(ngModel)]="expName"
+      required>
+    <label for="expSupplier">Nombre de la empresa / cliente:</label>
+    <input id="expSupplier" type="text" name="expSupplier" placeholder="Ingresa el nombre del empleador"
+      [(ngModel)]="expSupplier" required>
+    <label for="expReference">Link a la web de la empresa / cliente:</label>
+    <input id="expReference" type="text" name="expReference"
+      placeholder="Ingresa el link de la página web de la empresa" [(ngModel)]="expReference" required>
+    <label id="expImage" for="expImage">URL con el logo de la empresa / cliente:</label>
+    <input type="text" name="expImage" placeholder="Ingresa URL con logo de la empresa / cliente" [(ngModel)]="expImage"
+      required>
+    <label for="expDescription">Descripción del puesto:</label>
+    <textarea id="expDescription" type="textarea" name="expDescription"
+      placeholder="Ingresa una breve descripción del puesto" [(ngModel)]="expDescription" required></textarea>
+    <input type="submit" value="Añadir experiencia">
+  </form>
+</div>

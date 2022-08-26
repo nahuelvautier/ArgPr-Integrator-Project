@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("education")
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://nv-portfolio.web.app/")
 public class EduController {
     @Autowired
     EduService eduService;
@@ -43,6 +43,7 @@ public class EduController {
         return new ResponseEntity(education, HttpStatus.OK);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoEducation dtoEducation) {
         if(StringUtils.isBlank(dtoEducation.getEduName())) {
@@ -50,7 +51,7 @@ public class EduController {
         }
         
         if(eduService.existsByEduName(dtoEducation.getEduName())) {
-            return new ResponseEntity(new Msg("El nombre de la educación ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("El nombre de la educación ya exist.e"), HttpStatus.BAD_REQUEST);
         }
         
         

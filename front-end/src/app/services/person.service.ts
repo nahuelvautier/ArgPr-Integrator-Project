@@ -8,7 +8,7 @@ import { Person } from '../model/person.model';
   providedIn: 'root'
 })
 export class PersonService {
-  URLbase = 'http://localhost:8080/persons/';
+  URLbase = 'https://backendnv.herokuapp.com/persons/';
 
   constructor(private http: HttpClient) { }
 

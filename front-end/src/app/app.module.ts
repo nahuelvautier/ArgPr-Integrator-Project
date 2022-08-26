@@ -22,11 +22,15 @@ import { FormsModule } from '@angular/forms';
 import { InterceptorProvider } from './services/interceptor-service';
 import { EditExperienceComponent } from './components/professional-experience/edit-experience.component';
 import { EditEducationComponent } from './components/education/edit-education.component';
+import { NewExperienceComponent } from './components/professional-experience/new-experience.component';
+import { NewEducationComponent } from './components/education/new-education.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'experience/create', component: NewExperienceComponent },
   { path: 'experience/update/:id', component: EditExperienceComponent },
+  { path: 'education/create', component: NewEducationComponent },
   { path: 'education/update/:id', component: EditEducationComponent }
 ];
 
@@ -47,6 +51,8 @@ const routes: Routes = [
     LoginComponent,
     EditExperienceComponent,
     EditEducationComponent,
+    NewExperienceComponent,
+    NewEducationComponent,
   ],
   imports: [
     BrowserModule,

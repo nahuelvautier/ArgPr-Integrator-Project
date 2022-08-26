@@ -1,5 +1,10 @@
 <section class="experience-container    container">
-  <h2>Experiencia Profesional / Laboral</h2>
+  <div>
+    <h2>Experiencia Profesional / Laboral</h2>
+  </div>
+  <div *ngIf="isLogged" class="col-1    col-sm-2    create-btn">
+    <button routerLink="experience/create" type="button">Añadir experiencia</button>
+  </div>
   <div class="experience-item-wrapper" *ngFor="let Experience of experience">
 
     <div>

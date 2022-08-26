@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/arg-pr-integrator-project",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

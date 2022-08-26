@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("experience")
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://nv-portfolio.web.app/")
 public class ExpController {
     @Autowired
     ExpService expService;
@@ -44,6 +44,7 @@ public class ExpController {
         return new ResponseEntity(experience, HttpStatus.OK);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoExperience dtoExperience) {
         if(StringUtils.isBlank(dtoExperience.getExpName())) {
@@ -71,7 +72,7 @@ public class ExpController {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExperience dtoExperience) {
         if(!expService.existsById(id)) {
-            return new ResponseEntity(new Msg("No existe el ID seleccionado"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("No existe el ID seleccionado."), HttpStatus.BAD_REQUEST);
         }
         
         if(StringUtils.isBlank(dtoExperience.getExpName())) {
@@ -94,7 +95,7 @@ public class ExpController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if(!expService.existsById(id)) {
-            return new ResponseEntity(new Msg("No existe el ID seleccionado"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("No existe el ID seleccionado."), HttpStatus.BAD_REQUEST);
         }
         
         expService.delete(id);

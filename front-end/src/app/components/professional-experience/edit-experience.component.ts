@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Experience } from 'src/app/model/experience';
 import { ExpServiceService } from 'src/app/services/exp-service.service';
 

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://nv-portfolio.web.app/")
 public class PersonController {
     @Autowired IPersonService ipersonService;
     
@@ -29,14 +29,14 @@ public class PersonController {
     @PostMapping("persons/create")
     public String createPerson(@RequestBody Person person) {
         ipersonService.savePerson(person);
-        return "Usuario creado con éxito..";
+        return "Usuario creado con éxito.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("persons/delete/{id}")
     public String deletePerson(@PathVariable Long id) {
         ipersonService.deletePerson(id);
-        return "Usuario eliminado con éxito..";
+        return "Usuario eliminado con éxito.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
