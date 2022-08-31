@@ -1,4 +1,4 @@
-package com.portfolio.DTO;
+package com.portfolio.nahuelvautier.DTO;
 
 import javax.validation.constraints.NotBlank;
 

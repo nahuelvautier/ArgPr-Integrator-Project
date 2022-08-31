@@ -1,6 +1,6 @@
 package com.portfolio.nahuelvautier.Controller;
 
-import com.portfolio.DTO.DtoExperience;
+import com.portfolio.nahuelvautier.DTO.DtoExperience;
 import com.portfolio.nahuelvautier.Entity.Experience;
 import com.portfolio.nahuelvautier.Service.ExpService;
 import java.util.List;

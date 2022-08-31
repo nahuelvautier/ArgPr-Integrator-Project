@@ -1,6 +1,6 @@
 package com.portfolio.nahuelvautier.Controller;
 
-import com.portfolio.DTO.DtoEducation;
+import com.portfolio.nahuelvautier.DTO.DtoEducation;
 import com.portfolio.nahuelvautier.Entity.Education;
 import com.portfolio.nahuelvautier.Service.EduService;
 import java.util.List;
