@@ -84,7 +84,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUser loginUser, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
-            return new ResponseEntity(new Msg("Campos no válidos"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("Campos no válidos."), HttpStatus.BAD_REQUEST);
         }
         
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(

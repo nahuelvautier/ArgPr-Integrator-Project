@@ -43,11 +43,12 @@ export class LoginComponent implements OnInit {
       }, err => {
         this.isLogged = false;
         this.isLogginFail = true;
-        this.errorMsg = err.error.errorMsg;
-        console.error(this.errorMsg);
+        this.errorMsg = err.error.msg;
+
+        //console.error(err);
+        if (err.status === 400) return console.error(this.errorMsg);
+        if (err.status === 401) return alert(`Error ${err.status}: ${err.error.error}.\n\nVerifica tus datos.`);
       }
     );
   }
 }
-
-

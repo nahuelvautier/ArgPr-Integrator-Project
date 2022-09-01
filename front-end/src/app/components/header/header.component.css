@@ -17,7 +17,7 @@
   align-content: center;
 }
 
-.second-wrapper>* {
+.second-wrapper >* {
   margin: 1rem auto;
 }
 
@@ -35,7 +35,7 @@
   .header-item {
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
   }
 
   .second-wrapper {

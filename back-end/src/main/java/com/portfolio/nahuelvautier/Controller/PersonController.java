@@ -12,35 +12,37 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("persons")
 @RestController
 @CrossOrigin(origins = "https://nv-portfolio.web.app/")
 public class PersonController {
     @Autowired IPersonService ipersonService;
     
-    @GetMapping("persons/get")
+    @GetMapping("/get")
     public List<Person> getPerson() {
         return ipersonService.getPerson();
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("persons/create")
+    @PostMapping("/create")
     public String createPerson(@RequestBody Person person) {
         ipersonService.savePerson(person);
         return "Usuario creado con éxito.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("persons/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deletePerson(@PathVariable Long id) {
         ipersonService.deletePerson(id);
         return "Usuario eliminado con éxito.";
     }
     
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("persons/edit/{id}")
+    @PutMapping("/update/{id}")
     public Person editPerson(
             @PathVariable Long id,
             @RequestParam("name") String newName,
@@ -57,7 +59,7 @@ public class PersonController {
         return person;
     }
     
-    @GetMapping("persons/get/profile")
+    @GetMapping("/get/profile")
     public Person findPerson () {
         return ipersonService.findPerson((long)1);
     }

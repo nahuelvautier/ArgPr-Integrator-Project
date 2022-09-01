@@ -3,8 +3,12 @@
   width: 80%;
 }
 
+  .education-container h2 {
+    margin: 2rem 0;
+  }
+
 .education-items-wrapper {
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 .education-menu {
@@ -17,7 +21,8 @@
 }
 
 .create-btn button {
-  padding: .25rem;
+  padding: .5rem;
+  margin: .5rem 0;
   white-space: nowrap;
 }
 
@@ -74,9 +79,5 @@
 @media screen and (min-width: 768px) {
   .education-container {
     width: 100%;
-  }
-
-  .education-container h2 {
-    margin: 2rem 0;
   }
 }

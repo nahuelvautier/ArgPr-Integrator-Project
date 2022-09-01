@@ -2,19 +2,20 @@
   <div>
     <h2>Experiencia Profesional / Laboral</h2>
   </div>
-  <div *ngIf="isLogged" class="col-1    col-sm-2    create-btn">
+  <div *ngIf="isLogged" class="create-btn    col-1    col-sm-2">
     <button routerLink="experience/create" type="button">Añadir experiencia</button>
   </div>
   <div class="experience-item-wrapper" *ngFor="let Experience of experience">
 
-    <div>
-      <h3>{{Experience.expSupplier}}</h3>
-    </div>
+    <!-- <div>
+
+    </div> -->
     <div class="experience-item    row">
 
       <div class="col-md-4">
         <figure>
           <img src={{Experience.expImage}} alt="Imagen del logo empresarial">
+          <figcaption>{{Experience.expSupplier}}</figcaption>
         </figure>
       </div>
 

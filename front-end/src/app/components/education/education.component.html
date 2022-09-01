@@ -2,7 +2,7 @@
   <div>
     <h2>Educación</h2>
   </div>
-  <div *ngIf="isLogged" class="col-1    col-sm-2    create-btn">
+  <div *ngIf="isLogged" class="create-btn    col-1    col-sm-2">
     <button routerLink="education/create" type="button">Añadir educación</button>
   </div>
   <div class="education-items-wrapper" *ngFor="let Education of education">
