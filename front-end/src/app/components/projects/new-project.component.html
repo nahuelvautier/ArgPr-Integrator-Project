@@ -1,0 +1,22 @@
+<div class="create-form-wrapper">
+  <h2>Segmento para añadir nuevo proyecto</h2>
+  <form class="create-form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+    <legend>Por favor llena los campos según corresponda, todos los campos son obligatorios</legend>
+    <label for="proName">Nombre del Proyecto:</label>
+    <input id="proName" type="text" name="proName" placeholder="Ingresa el nombre del proyecto" [(ngModel)]="proName"
+      required>
+    <label for="proHref">Link del proyecto creado:</label>
+    <input id="proHref" type="text" name="proHref" placeholder="Ingresa el link del proyecto creado"
+      [(ngModel)]="proHref" required>
+    <label for="proApiUsed">Link de la API:</label>
+    <input id="proApiUsed" type="text" name="proApiUsed" placeholder="Ingresa el link a la web de la API utilizada"
+      [(ngModel)]="proApiUsed" required>
+    <label for="proExpedition">Expedición del proyecto: Mes/Año:</label>
+    <input id="proExpedition" type="text" name="proExpedition" placeholder="Expedición del proyecto: Mes/Año"
+      [(ngModel)]="proExpedition" required>
+    <label for="proDescription">Descripción del proyecto:</label>
+    <textarea id="proDescription" type="textarea" name="proDescription"
+      placeholder="Ingresa una breve descripción del proyecto" [(ngModel)]="proDescription" required></textarea>
+    <input type="submit" value="Añadir proyecto">
+  </form>
+</div>

@@ -24,6 +24,8 @@ import { EditExperienceComponent } from './components/professional-experience/ed
 import { EditEducationComponent } from './components/education/edit-education.component';
 import { NewExperienceComponent } from './components/professional-experience/new-experience.component';
 import { NewEducationComponent } from './components/education/new-education.component';
+import { NewProjectComponent } from './components/projects/new-project.component';
+import { EditProjectComponent } from './components/projects/edit-project.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +33,9 @@ const routes: Routes = [
   { path: 'experience/create', component: NewExperienceComponent },
   { path: 'experience/update/:id', component: EditExperienceComponent },
   { path: 'education/create', component: NewEducationComponent },
-  { path: 'education/update/:id', component: EditEducationComponent }
+  { path: 'education/update/:id', component: EditEducationComponent },
+  { path: 'projects/create', component: NewProjectComponent },
+  { path: 'projects/update/:id', component: EditProjectComponent }
 ];
 
 @NgModule({
@@ -53,6 +57,8 @@ const routes: Routes = [
     EditEducationComponent,
     NewExperienceComponent,
     NewEducationComponent,
+    NewProjectComponent,
+    EditProjectComponent,
   ],
   imports: [
     BrowserModule,

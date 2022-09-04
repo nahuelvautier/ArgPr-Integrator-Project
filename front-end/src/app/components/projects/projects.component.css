@@ -28,10 +28,61 @@
 
 .project-link-wrapper {
   margin-top: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .project-link-wrapper a {
   margin-left: 1rem;
+}
+
+.btn-wrapper {
+  white-space: nowrap;
+}
+
+.create-btn button {
+  padding: .5rem;
+  margin: 1rem 0 3rem 0;
+  white-space: nowrap;
+}
+
+.btn-wrapper button:nth-child(1) {
+  color: #eeeeee;
+  background-color: #08cb08;
+}
+
+.btn-wrapper button:nth-child(2) {
+  color: #eeeeee;
+  background-color: #b70303;
+}
+
+.btn-wrapper button:nth-child(1):hover {
+  color: #fefefe;
+  background-color: #08de08;
+}
+
+.btn-wrapper button:nth-child(2):hover {
+  color: #fefefe;
+  background-color: #db0505;
+}
+
+.project-item button {
+  height: 2.5rem;
+  width: 4rem;
+  border-radius: 20%;
+  border: thick solid #fefefe;
+}
+
+.project-item button:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 576px) {
+  .project-link-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+  }
 }
 
 @media screen and (min-width: 768px) {

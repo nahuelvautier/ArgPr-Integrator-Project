@@ -1,0 +1,22 @@
+<div *ngIf="project" class="edit-form-wrapper">
+  <h2>Segmento para editar proyecto</h2>
+  <form class="edit-form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <legend>Por favor llena los campos según corresponda, todos los campos son obligatorios</legend>
+    <label for="proName">Nombre del Proyecto:</label>
+    <input id="proName" type="text" name="proName" placeholder="Ingresa el nombre del proyecto"
+      [(ngModel)]="project.proName" required>
+    <label for="proHref">Link del proyecto creado:</label>
+    <input id="proHref" type="text" name="proHref" placeholder="Ingresa el link del proyecto creado"
+      [(ngModel)]="project.proHref" required>
+    <label for="proApiUsed">Link de la API:</label>
+    <input id="proApiUsed" type="text" name="proApiUsed"
+      placeholder="Ingresa el link a la web de la API extrna utilizada" [(ngModel)]="project.proApiUsed" required>
+    <label for="proExpedition">Expedición del proyecto: Mes/Año:</label>
+    <input id="proExpedition" type="text" name="proExpedition" placeholder="Expedición del proyecto: Mes/Año"
+      [(ngModel)]="project.proExpedition" required>
+    <label for="proDescription">Descripción del proyecto:</label>
+    <textarea id="proDescription" type="textarea" name="proDescription"
+      placeholder="Ingresa una breve descripción del proyecto" [(ngModel)]="project.proDescription" required></textarea>
+    <input type="submit" value="Editar proyecto">
+  </form>
+</div>

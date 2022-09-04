@@ -2,19 +2,19 @@
   <h2>Segmento para crear nueva educación</h2>
   <form class="create-form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
     <legend>Por favor llena los campos según corresponda, todos los campos son obligatorios</legend>
-    <label for="eduCareer">Nombre del título</label>
+    <label for="eduCareer">Nombre del título:</label>
     <input id="eduCareer" type="text" name="eduCareer" placeholder="Ingresa el nombre del título obtenido"
       [(ngModel)]="eduCareer" required>
-    <label for="eduName">Nombre de la institución</label>
+    <label for="eduName">Nombre de la institución:</label>
     <input id="eduName" type="text" name="eduName" placeholder="Ingresa el nombre de la institución"
       [(ngModel)]="eduName" required>
-    <label for="eduExpedition">Expedición del título: Mes/Año</label>
+    <label for="eduExpedition">Expedición del título: Mes/Año:</label>
     <input id="eduExpedition" type="text" name="eduExpedition" placeholder="Ingresa la fecha de expedición MM/DD"
       [(ngModel)]="eduExpedition" required>
-    <label for="eduImage">URL al logo de la institución</label>
+    <label for="eduImage">URL al logo de la institución:</label>
     <input id="eduImage" type="text" name="eduImage" placeholder="Ingresa URL con logo de la institución"
       [(ngModel)]="eduImage" required>
-    <label for="eduDescription">Descripción de la institución</label>
+    <label for="eduDescription">Descripción de la institución:</label>
     <textarea id="eduDescription" type="textarea" name="eduDescription"
       placeholder="Ingresa la descripción de la institución" [(ngModel)]="eduDescription" required></textarea>
     <input type="submit" value="Añadir educación">

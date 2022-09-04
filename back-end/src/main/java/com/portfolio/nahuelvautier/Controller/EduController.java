@@ -51,7 +51,7 @@ public class EduController {
         }
         
         if(eduService.existsByEduName(dtoEducation.getEduName())) {
-            return new ResponseEntity(new Msg("El nombre de la educación ya exist.e"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Msg("El nombre de la educación ya existe."), HttpStatus.BAD_REQUEST);
         }
         
         
@@ -68,7 +68,7 @@ public class EduController {
         );
                 
        eduService.save(education);
-       return new ResponseEntity(new Msg("Educación agregada con éxito."), HttpStatus.OK);
+       return new ResponseEntity(new Msg("Educación añadida con éxito."), HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")

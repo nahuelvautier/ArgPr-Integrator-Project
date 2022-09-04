@@ -30,10 +30,10 @@ export class NewEducationComponent implements OnInit {
     );
 
     this.eduService.save(edu).subscribe(data => {
-      alert("Educación creada con éxito");
+      alert("Educación creada con éxito.");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al crear la educación");
+      alert("Error al crear la educación.");
       this.router.navigate(['']);
     });
   }

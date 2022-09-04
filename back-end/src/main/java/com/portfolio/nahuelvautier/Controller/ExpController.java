@@ -65,7 +65,7 @@ public class ExpController {
         
         expService.save(experience);
         
-        return new ResponseEntity(new Msg("Experiencia agregada con éxito."), HttpStatus.OK);
+        return new ResponseEntity(new Msg("Experiencia añadida con éxito."), HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
