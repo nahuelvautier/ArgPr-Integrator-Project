@@ -1,63 +1,57 @@
 <div class="skills-container">
-  <h2>Hard & Soft Skills</h2>
-  <h3>Tecnologías</h3>
-  <section class="hard-wrapper">
-    <div class="hard-soft-item">
-      <circle-progress [percent]="95" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500"
-        [imageSrc]="'../../../assets/html5.svg'" [showImage]="true" [imageHeight]="85" [imageWidth]="85">
-      </circle-progress>
+
+  <div>
+    <h2>Hard & Soft Skills</h2>
+  </div>
+
+  <div>
+    <h3>Tecnologías</h3>
+  </div>
+
+  <div *ngIf="isLogged" class="create-btn">
+    <button routerLink="hard/skills/create" type="button">Añadir habilidad</button>
+  </div>
+
+  <section class="hard-wrapper" *ngFor="let HSS of hss">
+
+    <div *ngIf="!HSS.hsTitle" class="hard-soft-item">
+      <div>
+        <circle-progress [percent]="HSS.hsPercent" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
+          [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="800"
+          imageSrc={{HSS.hsImage}} [showImage]="true" [imageHeight]="85" [imageWidth]="85" [lazy]="true">
+        </circle-progress>
+      </div>
+      <div *ngIf="isLogged" class="btn-wrapper    col-4     col-md-1    col-lg-2">
+        <button routerLink="hard/skills/update/{{HSS.id}}" type="button"><i class="bi bi-pencil"></i></button>
+        <button (click)="(delete(HSS.id))" type="button"><i class="bi bi-trash3"></i></button>
+      </div>
     </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="85" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500"
-        [imageSrc]="'../../../assets/css.svg'" [showImage]="true" [imageHeight]="85" [imageWidth]="85">
-      </circle-progress>
-    </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="80" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500"
-        [imageSrc]="'../../../assets/javascript.svg'" [showImage]="true" [imageHeight]="85" [imageWidth]="85">
-      </circle-progress>
-    </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="65" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500"
-        [imageSrc]="'../../../assets/bootstrap.svg'" [showImage]="true" [imageHeight]="85" [imageWidth]="85">
-      </circle-progress>
-    </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="70" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500"
-        [imageSrc]="'../../../assets/react.svg'" [showImage]="true" [imageHeight]="85" [imageWidth]="85">
-      </circle-progress>
-    </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="65" [radius]="80" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500"
-        [imageSrc]="'../../../assets/node.svg'" [showImage]="true" [imageHeight]="85" [imageWidth]="85">
-      </circle-progress>
-    </div>
+
   </section>
-  <h3>Habilidades blandas</h3>
-  <section class="soft-wrapper">
-    <div class="hard-soft-item">
-      <circle-progress [percent]="70" [radius]="80" [title]="'Trabajo en equipo'" [showUnits]="false"
-        [titleFontSize]="'1rem'" [showSubtitle]="false" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500">
+
+  <hr>
+
+  <div>
+    <h3>Habilidades blandas</h3>
+  </div>
+
+  <div *ngIf="isLogged" class="create-btn    col-1    col-sm-2">
+    <button routerLink="soft/skills/create" type="button">Añadir habilidad</button>
+  </div>
+
+  <section class="soft-wrapper" *ngFor="let HSS of hss">
+
+    <div *ngIf="!HSS.hsImage" class="hard-soft-item">
+      <circle-progress [percent]="HSS.hsPercent" [radius]="80" [title]="HSS.hsTitle" [titleFontSize]="'1rem'"
+        [showUnits]=" false" [showSubtitle]="false" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="800"
+        [lazy]="true">
       </circle-progress>
+      <div *ngIf="isLogged" class="btn-wrapper    col-4     col-md-1    col-lg-2">
+        <button routerLink="soft/skills/update/{{HSS.id}}" type="button"><i class="bi bi-pencil"></i></button>
+        <button (click)="(delete(HSS.id))" type="button"><i class="bi bi-trash3"></i></button>
+      </div>
     </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="90" [radius]="80" [title]="'Comunicación acertiva'" [titleFontSize]="'0.75rem'"
-        [showUnits]="false" [showSubtitle]="false" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500">
-      </circle-progress>
-    </div>
-    <div class="hard-soft-item">
-      <circle-progress [percent]="79" [radius]="80" [title]="'Inglés'" [titleFontSize]="'2rem'" [showUnits]="false"
-        [subtitle]="'B2'" [subtitleFontSize]="'1.5rem'" [outerStrokeWidth]="10" [innerStrokeWidth]="4"
-        [outerStrokeColor]="'#43636f'" [innerStrokeColor]="'#283940'" [animation]="true" [animationDuration]="500">
-      </circle-progress>
-    </div>
+
   </section>
 </div>

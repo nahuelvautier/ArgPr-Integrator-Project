@@ -33,7 +33,7 @@ export class NewProjectComponent implements OnInit {
       alert("Proyecto añadido con éxito.");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al añadir el proyecto.");
+      alert(err.error.msg || "Error al añadir el proyecto.");
     })
   }
 }

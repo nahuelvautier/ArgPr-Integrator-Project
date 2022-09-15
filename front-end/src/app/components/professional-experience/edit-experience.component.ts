@@ -21,7 +21,7 @@ export class EditExperienceComponent implements OnInit {
     this.expService.detail(id).subscribe(data => {
       this.experience = data;
     }, err => {
-      alert("Error al editar la experiencia.");
+      alert(err.error.msg || "Error al editar la experiencia..");
       this.router.navigate(['']);
     });
   }
@@ -31,7 +31,7 @@ export class EditExperienceComponent implements OnInit {
     this.expService.update(id, this.experience).subscribe(data => {
       this.router.navigate(['']);
     }, err => {
-      alert("Error al editar la experiencia.");
+      alert(err.error.msg || "Error al editar la experiencia.");
       this.router.navigate(['']);
     });
   }

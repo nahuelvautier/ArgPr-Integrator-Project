@@ -1,3 +1,8 @@
+.skills-container {
+  margin: auto;
+  width: 80%;
+}
+
 h2 {
   margin: 1.5rem
 }
@@ -6,16 +11,62 @@ h3 {
   margin: 2rem;
 }
 
-.hard-wrapper, .soft-wrapper {
-  padding-bottom: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-items: center;
+hr {
+  margin: 1rem auto;
 }
 
-@media screen and (min-width: 576px) {
-  .skills-container {
-    margin: auto;
-    width: 90%;
-  }
+.hard-wrapper, .soft-wrapper {
+  padding-bottom: 2rem;
+  /* display: inline-grid;
+  grid-template-columns: repeat(auto-fil, minmax(200px, 1fr));
+  justify-items: center; */
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.hard-wrapper button, .soft-wrapper button {
+  margin-left: 2rem;
+}
+
+.btn-wrapper {
+  white-space: nowrap;
+}
+
+.btn-wrapper button:nth-child(1) {
+  color: #eeeeee;
+  background-color: #08cb08;
+}
+
+.btn-wrapper button:nth-child(2) {
+  color: #eeeeee;
+  background-color: #b70303;
+}
+
+.btn-wrapper button:nth-child(1):hover {
+  color: #fefefe;
+  background-color: #08de08;
+}
+
+.btn-wrapper button:nth-child(2):hover {
+  color: #fefefe;
+  background-color: #db0505;
+}
+
+.hard-wrapper button, .soft-wrapper button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: thick solid #fefefe;
+}
+
+.hard-wrapper button, .soft-wrapper button:hover {
+  cursor: pointer;
+}
+
+.create-btn button {
+  padding: .5rem;
+  margin: .5rem 0 3.5rem 0;
+  white-space: nowrap;
 }

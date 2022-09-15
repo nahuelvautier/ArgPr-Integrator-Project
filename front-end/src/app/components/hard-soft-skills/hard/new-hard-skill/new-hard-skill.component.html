@@ -1,0 +1,14 @@
+<div class="create-form-wrapper">
+  <h2>Segmento para crear nueva habilidad</h2>
+  <form class="create-form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+    <legend>Por favor llena los campos según corresponda, todos los campos son obligatorios</legend>
+    <label for="hsPercent">Valor de conocimiento:</label>
+    <input id="hsPercent" type="text" name="hsPercent"
+      placeholder="Ingresa el valor de conocimiento con un número del 1 al 100" [(ngModel)]="hsPercent" required>
+    <input type="hidden" [(ngModel)]="hsTitle" [ngModelOptions]="{standalone: true}">
+    <label for="hsImage">URL de la imagen de la habilidad:</label>
+    <input id="hsImage" type="text" name="hsImage" placeholder="Ingresa URL con la imagen de la habilidad"
+      [(ngModel)]="hsImage" required>
+    <input type="submit" value="Añadir habilidad">
+  </form>
+</div>

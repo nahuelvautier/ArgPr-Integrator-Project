@@ -33,7 +33,7 @@ export class NewEducationComponent implements OnInit {
       alert("Educación creada con éxito.");
       this.router.navigate(['']);
     }, err => {
-      alert("Error al crear la educación.");
+      alert(err.error.msg || "Error al añadir la educación.");
       this.router.navigate(['']);
     });
   }

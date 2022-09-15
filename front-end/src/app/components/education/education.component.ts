@@ -36,7 +36,7 @@ export class EducationComponent implements OnInit {
       if(id !== undefined) {
         this.eduService.delete(id).subscribe(data => this.loadEducation());
       } else {
-        alert("No se pudo eliminar la seccion de educación seleccionada.");
+        alert("No se pudo eliminar la educación seleccionada.");
       }
     }
   }

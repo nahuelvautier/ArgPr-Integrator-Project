@@ -26,6 +26,10 @@ import { NewExperienceComponent } from './components/professional-experience/new
 import { NewEducationComponent } from './components/education/new-education.component';
 import { NewProjectComponent } from './components/projects/new-project.component';
 import { EditProjectComponent } from './components/projects/edit-project.component';
+import { NewHardSkillComponent } from './components/hard-soft-skills/hard/new-hard-skill/new-hard-skill.component';
+import { NewSoftSkillComponent } from './components/hard-soft-skills/soft/new-soft-skill/new-soft-skill.component';
+import { EditHardSkillComponent } from './components/hard-soft-skills/hard/edit-hard-skill/edit-hard-skill.component';
+import { EditSoftSkillComponent } from './components/hard-soft-skills/soft/edit-soft-skill/edit-soft-skill.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,7 +39,11 @@ const routes: Routes = [
   { path: 'education/create', component: NewEducationComponent },
   { path: 'education/update/:id', component: EditEducationComponent },
   { path: 'projects/create', component: NewProjectComponent },
-  { path: 'projects/update/:id', component: EditProjectComponent }
+  { path: 'projects/update/:id', component: EditProjectComponent },
+  { path: 'hard/skills/create', component: NewHardSkillComponent },
+  { path: 'soft/skills/create', component: NewSoftSkillComponent },
+  { path: 'hard/skills/update/:id', component: EditHardSkillComponent},
+  { path: 'soft/skills/update/:id', component: EditSoftSkillComponent }
 ];
 
 @NgModule({
@@ -59,6 +67,10 @@ const routes: Routes = [
     NewEducationComponent,
     NewProjectComponent,
     EditProjectComponent,
+    NewHardSkillComponent,
+    NewSoftSkillComponent,
+    EditHardSkillComponent,
+    EditSoftSkillComponent
   ],
   imports: [
     BrowserModule,

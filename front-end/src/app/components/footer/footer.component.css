@@ -5,3 +5,7 @@
 .footer-wrapper p {
   text-align: center;
 }
+
+.footer-wrapper a {
+  text-decoration: none;
+}

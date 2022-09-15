@@ -21,7 +21,7 @@ export class EditProjectComponent implements OnInit {
     this.proService.detail(id).subscribe(data => {
       this.project = data;
     }, err => {
-      alert("Error al editar el proyecto.");
+      alert(err.error.msg || "Error al editar el proyecto.");
       this.router.navigate(['']);
     })
   }
@@ -31,7 +31,7 @@ export class EditProjectComponent implements OnInit {
     this.proService.update(id, this.project).subscribe(data => {
       this.router.navigate(['']);
       }, err => {
-        alert("Error al editar el proyecto.");
+        alert(err.error.msg || "Error al editar el proyecto.");
         this.router.navigate(['']);
       })
   }
