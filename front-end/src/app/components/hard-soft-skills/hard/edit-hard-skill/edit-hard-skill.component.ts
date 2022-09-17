@@ -21,7 +21,7 @@ export class EditHardSkillComponent implements OnInit {
     this.hssService.detail(id).subscribe(data => {
       this.hss = data
     }, err => {
-      alert(err.error.msg);
+      alert(err.error.msg || "Error al editar la habilidad.");
       this.router.navigate(['']);
     })
   }
@@ -31,7 +31,7 @@ export class EditHardSkillComponent implements OnInit {
     this.hssService.update(id, this.hss).subscribe(data => {
       this.router.navigate(['']);
     }, err => {
-      alert(err.error.msg);
+      alert(err.error.msg || "Error al editar la habilidad.");
       this.router.navigate(['']);
     })
   }

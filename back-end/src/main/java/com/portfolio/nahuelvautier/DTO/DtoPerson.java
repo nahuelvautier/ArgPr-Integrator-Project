@@ -1,45 +1,35 @@
-package com.portfolio.nahuelvautier.Entity;
+package com.portfolio.nahuelvautier.DTO;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 
-@Entity
-public class Person {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class DtoPerson {
+    @NotBlank
     private String personName;
+    @NotBlank
     private String personTitle;
+    @NotBlank
     private String personDescription;
+    @NotBlank
     private String personPicture;
+    @NotBlank
     private String personBanner;
 
-    public Person() {
+    public DtoPerson() {
     }
-    
-    public Person(
+
+    public DtoPerson(
             String personName,
             String personTitle,
             String personDescription,
             String personPicture,
             String personBanner
-    ) {
+        ) {
         this.personName = personName;
         this.personTitle = personTitle;
         this.personDescription = personDescription;
         this.personPicture = personPicture;
         this.personBanner = personBanner;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getPersonName() {

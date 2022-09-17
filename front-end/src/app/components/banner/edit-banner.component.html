@@ -1,0 +1,14 @@
+<div *ngIf="Person" class="edit-form-wrapper">
+  <h2>Segmento para editar el banner</h2>
+  <form class="edit-form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <legend>Por favor llena el campo</legend>
+    <input type="hidden" [(ngModel)]="Person.personName" [ngModelOptions]="{standalone: true}">
+    <input type="hidden" [(ngModel)]="Person.personTitle" [ngModelOptions]="{standalone: true}">
+    <input type="hidden" [(ngModel)]="Person.personDescription" [ngModelOptions]="{standalone: true}">
+    <input type="hidden" [(ngModel)]="Person.personPicture" [ngModelOptions]="{standalone: true}">
+    <label for="personBanner">Banner:</label>
+    <input id="personBanner" type="input" name="personBanner" placeholder="Ingresa la URL del banner"
+      [(ngModel)]="Person.personBanner" required>
+    <input type="submit" value="Editar banner">
+  </form>
+</div>

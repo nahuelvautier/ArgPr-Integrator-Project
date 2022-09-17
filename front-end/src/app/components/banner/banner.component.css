@@ -1,12 +1,39 @@
 .banner-item {
-  margin-bottom: -.5rem;
+  margin-bottom: -3rem;
   height: 12rem;
-  width: 100vw;
+  width: 100%;
   max-width: 1992px;
+}
+
+.btn-wrapper {
+  position: relative;
+  bottom: 1rem;;
+  right: calc(-85%);
+}
+
+.btn-wrapper button:nth-child(1) {
+  color: #eeeeee;
+  background-color: #08cb08;
+}
+
+.btn-wrapper button:nth-child(1):hover {
+  color: #fefefe;
+  background-color: #08de08;
+}
+
+.btn-wrapper button {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: none;
 }
 
 @media screen and (min-width: 768px) {
   .banner-item {
     height: 55vh;;
+  }
+
+  .btn-wrapper {
+    right: calc(-95%);
   }
 }

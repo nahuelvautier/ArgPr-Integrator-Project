@@ -4,15 +4,11 @@
   width: 80%;
   display: flex;
   flex-flow: column wrap;
-  align-content: center;
+  align-items: center;
 }
 
 .profile-figure {
-  margin-top: -3.5rem;
-}
-
-.profile-figure figcaption {
-  margin-top: -.25rem;
+  margin: -3rem 0 0 -4.5rem;
 }
 
 .about-container h1 {
@@ -29,18 +25,62 @@
   border-radius: 50%;
 }
 
-.about-description-wrapper h2 {
+.first-container {
   margin: 2rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.btn-wrapper button:nth-child(1) {
+  color: #eeeeee;
+  background-color: #08cb08;
+}
+
+.btn-wrapper button:nth-child(1):hover {
+  color: #fefefe;
+  background-color: #08de08;
+}
+
+.btn-wrapper button {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  border: thick solid #fefefe;
 }
 
 .about-description-wrapper p {
   padding: 0 1rem;
 }
 
+
+
 /*MQ*/
+@media screen and (min-width: 360px) {
+  .profile-figure {
+    margin-left: -8rem;
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .profile-figure {
+    margin-left: -12.5rem;
+  }
+}
+
 @media screen and (min-width: 576px) {
+  .profile-figure {
+    margin-left: -15rem;
+  }
+
   .profile-figure figcaption {
     white-space: nowrap;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .profile-figure {
+    margin-left: -18rem;
   }
 }
 
@@ -51,16 +91,12 @@
     justify-content: space-evenly;
   }
 
-  .about-description-wrapper h2 {
-    margin-top: 8.5rem;
-  }
-
-  .about-description-wrapper h2, .about-description-wrapper p {
-    margin-left: 1.5rem;
+  .first-container {
+    margin: 8.5rem 0 2rem 0;
   }
 
   .profile-figure {
-    margin-top: -5rem;
+    margin: -14rem 0 -3rem 0;
   }
 
   .profile-photo-img {

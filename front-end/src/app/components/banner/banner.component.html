@@ -1,3 +1,6 @@
 <figure>
-  <img class="banner-item" src="../../../assets/portfolio-banner.png" alt="Banner de portfolio de Nahuel Vautier">
+  <img class="banner-item" src="{{Person.personBanner}}" alt="Banner de portfolio de Nahuel Vautier">
+  <div *ngIf="isLogged" class="btn-wrapper    col-2    col-sm-1">
+    <button routerLink="banner/persons/update/{{Person.id}}" type="button"><i class="bi bi-pencil"></i></button>
+  </div>
 </figure>

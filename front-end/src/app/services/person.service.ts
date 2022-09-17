@@ -8,11 +8,19 @@ import { Person } from '../model/person.model';
   providedIn: 'root'
 })
 export class PersonService {
-  URLbase = 'https://backendnv.herokuapp.com/persons/';
+  URLPersons = 'https://backendnv.herokuapp.com/persons/';
 
   constructor(private http: HttpClient) { }
 
-  public getPerson() : Observable<Person> {
-    return this.http.get<Person>(this.URLbase + 'get/profile');
+  public getPerson(): Observable<Person> {
+    return this.http.get<Person>(this.URLPersons + 'get/profile');
+  }
+
+  public detail(id: number): Observable<Person> {
+    return this.http.get<Person>(this.URLPersons + `detail/${id}`);
+  }
+
+  public update(id: number, Person: Person): Observable<any> {
+    return this.http.put<any>(this.URLPersons + `update/${id}`, Person);
   }
 }

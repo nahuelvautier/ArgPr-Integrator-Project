@@ -27,34 +27,25 @@
   min-width: 10rem;
 }
 
-.edit-form textarea {
-  resize: none;
-}
-
 .edit-form legend {
   margin: 1rem auto;
+  width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
 }
 
 .edit-form label,
-.edit-form input,
-.edit-form textarea {
+.edit-form input {
   font-size: 1rem;
 }
 
-.edit-form input,
-.edit-form textarea {
+.edit-form input {
   border: 3px solid #43636f;
 }
 
 .edit-form label {
   margin-top: 1rem;
-}
-
-.edit-form textarea {
-  height: 30vh;
 }
 
 .edit-form input[type="submit"] {

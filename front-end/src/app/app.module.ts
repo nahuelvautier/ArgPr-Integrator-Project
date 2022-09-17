@@ -30,6 +30,8 @@ import { NewHardSkillComponent } from './components/hard-soft-skills/hard/new-ha
 import { NewSoftSkillComponent } from './components/hard-soft-skills/soft/new-soft-skill/new-soft-skill.component';
 import { EditHardSkillComponent } from './components/hard-soft-skills/hard/edit-hard-skill/edit-hard-skill.component';
 import { EditSoftSkillComponent } from './components/hard-soft-skills/soft/edit-soft-skill/edit-soft-skill.component';
+import { EditAboutComponent } from './components/about/edit-about.component';
+import { EditBannerComponent } from './components/banner/edit-banner.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,7 +45,9 @@ const routes: Routes = [
   { path: 'hard/skills/create', component: NewHardSkillComponent },
   { path: 'soft/skills/create', component: NewSoftSkillComponent },
   { path: 'hard/skills/update/:id', component: EditHardSkillComponent},
-  { path: 'soft/skills/update/:id', component: EditSoftSkillComponent }
+  { path: 'soft/skills/update/:id', component: EditSoftSkillComponent },
+  { path: 'persons/update/:id', component: EditAboutComponent },
+  { path: 'banner/persons/update/:id', component: EditBannerComponent }
 ];
 
 @NgModule({
@@ -70,7 +74,9 @@ const routes: Routes = [
     NewHardSkillComponent,
     NewSoftSkillComponent,
     EditHardSkillComponent,
-    EditSoftSkillComponent
+    EditSoftSkillComponent,
+    EditAboutComponent,
+    EditBannerComponent
   ],
   imports: [
     BrowserModule,

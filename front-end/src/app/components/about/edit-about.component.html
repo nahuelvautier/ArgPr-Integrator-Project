@@ -1,0 +1,20 @@
+<div *ngIf="Person" class="edit-form-wrapper">
+  <h2>Segmento para editar la información del usuario</h2>
+  <form class="edit-form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <legend>Por favor llena los campos según corresponda, todos los campos son obligatorios</legend>
+    <label for="personName">Nombre:</label>
+    <input id="personName" type="text" name="personName" placeholder="Ingresa tu nombre" [(ngModel)]="Person.personName"
+      required>
+    <label for="personTitle">Nombre del título:</label>
+    <input id="personTitle" type="text" name="personTitle" placeholder="Ingresa el nombre de tu título"
+      [(ngModel)]="Person.personTitle" required>
+    <label for="personPicture">URL de la foto:</label>
+    <input id="personPicture" type="text" name="personPicture" placeholder="Ingresa la URL de la foto del perfil"
+      [(ngModel)]="Person.personPicture" required>
+    <label for="personDescription">Descripción:</label>
+    <textarea id="personDescription" type="textarea" name="personDescription"
+      placeholder="Ingresa una breve descripción" [(ngModel)]="Person.personDescription" required></textarea>
+    <input type="hidden" [(ngModel)]="Person.personBanner" [ngModelOptions]="{standalone: true}">
+    <input type="submit" value="Editar información">
+  </form>
+</div>

@@ -17,13 +17,9 @@ hr {
 
 .hard-wrapper, .soft-wrapper {
   padding-bottom: 2rem;
-  /* display: inline-grid;
+  display: grid;
   grid-template-columns: repeat(auto-fil, minmax(200px, 1fr));
-  justify-items: center; */
-  display: inline-flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
+  justify-items: center;
 }
 
 .hard-wrapper button, .soft-wrapper button {
@@ -69,4 +65,13 @@ hr {
   padding: .5rem;
   margin: .5rem 0 3.5rem 0;
   white-space: nowrap;
+}
+
+@media screen and (min-width: 492px) {
+  .hard-wrapper, .soft-wrapper {
+    display: inline-flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -1,9 +1,13 @@
 package com.portfolio.nahuelvautier.Controller;
 
+import com.portfolio.nahuelvautier.DTO.DtoPerson;
 import com.portfolio.nahuelvautier.Entity.Person;
-import com.portfolio.nahuelvautier.Interface.IPersonService;
+import com.portfolio.nahuelvautier.Service.PersonService;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,54 +17,103 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("persons")
 @RestController
 @CrossOrigin(origins = "https://nv-portfolio.web.app/")
 public class PersonController {
-    @Autowired IPersonService ipersonService;
+    @Autowired
+    PersonService personService;
     
-    @GetMapping("/get")
-    public List<Person> getPerson() {
-        return ipersonService.getPerson();
+    @GetMapping("/list")
+    public ResponseEntity<List<Person>> list() {
+        List<Person> list = personService.list();
+        
+        return new ResponseEntity(list, HttpStatus.OK);
+    }
+    
+    @GetMapping("/get/profile")
+    public Person findPerson() {
+        return personService.findPerson((int)4);
+    }
+    
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Person> getById(@PathVariable("id") int id) {
+        if(!personService.existsById(id)) {
+            return new ResponseEntity(new Msg("No existe el ID."), HttpStatus.BAD_REQUEST);
+        }
+        
+        Person person = personService.getOne(id).get();
+        return new ResponseEntity(person, HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
-    public String createPerson(@RequestBody Person person) {
-        ipersonService.savePerson(person);
-        return "Usuario creado con éxito.";
-    }
-    
-    @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/delete/{id}")
-    public String deletePerson(@PathVariable Long id) {
-        ipersonService.deletePerson(id);
-        return "Usuario eliminado con éxito.";
+    public ResponseEntity<?> create(@RequestBody DtoPerson dtoPerson) {
+        if(StringUtils.isBlank(dtoPerson.getPersonName())) {
+            return new ResponseEntity(new Msg("El nombre de la persona es requerido."), HttpStatus.BAD_REQUEST);
+        }
+        
+        if(StringUtils.isBlank(dtoPerson.getPersonTitle())) {
+            return new ResponseEntity(new Msg("El título de la persona es requerido."), HttpStatus.BAD_REQUEST);
+        }
+        
+        if(StringUtils.isBlank(dtoPerson.getPersonDescription())) {
+            return new ResponseEntity(new Msg("La descripción de la persona es requerida."), HttpStatus.BAD_REQUEST);
+        }
+        
+        Person person = new Person(
+                dtoPerson.getPersonName(),
+                dtoPerson.getPersonTitle(),
+                dtoPerson.getPersonDescription(),
+                dtoPerson.getPersonPicture(),
+                dtoPerson.getPersonBanner()
+        );
+        
+        personService.save(person);
+        return new ResponseEntity(new Msg("La persona ha sido añadida con éxito."), HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
-    public Person editPerson(
-            @PathVariable Long id,
-            @RequestParam("name") String newName,
-            @RequestParam("lastname") String newLastName,
-            @RequestParam("image") String newImage
-           ){
-        Person person = ipersonService.findPerson(id);
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoPerson dtoPerson) {
+        if(!personService.existsById(id)) {
+            return new ResponseEntity(new Msg("No existe el ID seleccionado."), HttpStatus.NOT_FOUND);
+        }
         
-        person.setName(newName);
-        person.setLastName(newLastName);
-        person.setImage(newImage);
+        if(StringUtils.isBlank(dtoPerson.getPersonName())) {
+            return new ResponseEntity(new Msg("El nombre de la persona es requerido."), HttpStatus.BAD_REQUEST);
+        }
         
-        ipersonService.savePerson(person);
-        return person;
+        if(StringUtils.isBlank(dtoPerson.getPersonTitle())) {
+            return new ResponseEntity(new Msg("El título de la persona es requerido."), HttpStatus.BAD_REQUEST);
+        }
+        
+        if(StringUtils.isBlank(dtoPerson.getPersonDescription())) {
+            return new ResponseEntity(new Msg("La descripción de la persona es requerida."), HttpStatus.BAD_REQUEST);
+        }
+        
+        Person person = personService.getOne(id).get();
+        
+        person.setPersonName(dtoPerson.getPersonName());
+        person.setPersonTitle(dtoPerson.getPersonTitle());
+        person.setPersonDescription(dtoPerson.getPersonDescription());
+        person.setPersonPicture(dtoPerson.getPersonPicture());
+        person.setPersonBanner(dtoPerson.getPersonBanner());
+        
+        personService.save(person);
+        return new ResponseEntity(new Msg("La persona ha sido actualizada con éxito."), HttpStatus.OK);
     }
     
-    @GetMapping("/get/profile")
-    public Person findPerson () {
-        return ipersonService.findPerson((long)1);
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") int id) {
+        if(!personService.existsById(id)) {
+            return new ResponseEntity(new Msg("No existe el ID seleccionado."), HttpStatus.NOT_FOUND);
+        }
+        
+        personService.delete(id);
+        return new ResponseEntity(new Msg("La persona ha sido eliminada exitosamente."), HttpStatus.OK);
     }
 }
