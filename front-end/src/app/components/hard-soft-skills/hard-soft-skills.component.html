@@ -1,4 +1,4 @@
-<div class="skills-container">
+<section class="skills-container">
 
   <div>
     <h2>Hard & Soft Skills</h2>
@@ -12,7 +12,7 @@
     <button routerLink="hard/skills/create" type="button">Añadir habilidad</button>
   </div>
 
-  <section class="hard-wrapper" *ngFor="let HSS of hss">
+  <div class="hard-wrapper" *ngFor="let HSS of hss">
 
     <div *ngIf="!HSS.hsTitle" class="hard-soft-item">
       <div>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-  </section>
+  </div>
 
   <hr>
 
@@ -39,7 +39,7 @@
     <button routerLink="soft/skills/create" type="button">Añadir habilidad</button>
   </div>
 
-  <section class="soft-wrapper" *ngFor="let HSS of hss">
+  <div class="soft-wrapper" *ngFor="let HSS of hss">
 
     <div *ngIf="!HSS.hsImage" class="hard-soft-item">
       <circle-progress [percent]="HSS.hsPercent" [radius]="80" [title]="HSS.hsTitle" [titleFontSize]="'1rem'"
@@ -53,5 +53,5 @@
       </div>
     </div>
 
-  </section>
-</div>
+  </div>
+</section>

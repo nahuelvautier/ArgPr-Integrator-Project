@@ -1,4 +1,5 @@
 .skills-container {
+  padding-bottom: 2rem;
   margin: auto;
   width: 80%;
 }
@@ -16,10 +17,10 @@ hr {
 }
 
 .hard-wrapper, .soft-wrapper {
-  padding-bottom: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fil, minmax(200px, 1fr));
-  justify-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .hard-wrapper button, .soft-wrapper button {
@@ -70,8 +71,5 @@ hr {
 @media screen and (min-width: 492px) {
   .hard-wrapper, .soft-wrapper {
     display: inline-flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
   }
 }
