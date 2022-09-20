@@ -27,12 +27,22 @@ export class EditSoftSkillComponent implements OnInit {
   }
 
   onUpdate(): void {
-    const id = this.activatedRoute.snapshot.params['id'];
-    this.hssService.update(id, this.hss).subscribe(data => {
-      this.router.navigate(['']);
-    }, err => {
-      alert(err.error.msg || "Error al editar la habilidad.");
-      this.router.navigate(['']);
-    })
+
+    if (!this.hss.hsTitle) {
+      throw {
+        alert: alert("El nombre de la habilidad es requerido."),
+        navigate: this.router.navigate([''])
+      }
+      return null;
+    } else {
+      const id = this.activatedRoute.snapshot.params['id'];
+      this.hssService.update(id, this.hss).subscribe(data => {
+        this.router.navigate(['']);
+      }, err => {
+        alert(err.error.msg || "Error al editar la habilidad.");
+        this.router.navigate(['']);
+      })
+    }
+
   }
 }

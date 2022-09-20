@@ -66,6 +66,10 @@ public class HardSoftSkillController {
             return new ResponseEntity(new Msg("No existe el ID seleccinado."), HttpStatus.NOT_FOUND);
         }
         
+        if(dtoHSS.getHsPercent() > 100) {
+            return new ResponseEntity(new Msg("El valor del conocimiento no puede ser mayor a 100."), HttpStatus.BAD_REQUEST);
+        }
+        
         if(hssService.existsByHsTitle(dtoHSS.getHsTitle()) && hssService.getByHsTitle(dtoHSS.getHsTitle()).get().getId() != id) {
             return new ResponseEntity(new Msg("El nombre de la habilidad que intentas actualizar ya existe."), HttpStatus.BAD_REQUEST);
         }

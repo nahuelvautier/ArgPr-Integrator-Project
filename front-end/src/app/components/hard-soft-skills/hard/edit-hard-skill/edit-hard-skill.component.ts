@@ -27,12 +27,22 @@ export class EditHardSkillComponent implements OnInit {
   }
 
   onUpdate(): void {
-    const id = this.activatedRoute.snapshot.params['id'];
-    this.hssService.update(id, this.hss).subscribe(data => {
-      this.router.navigate(['']);
-    }, err => {
-      alert(err.error.msg || "Error al editar la habilidad.");
-      this.router.navigate(['']);
-    })
+
+    if (!this.hss.hsImage) {
+      throw {
+        alert: alert("La URL de la imagen de la habilidad es requerida."),
+        navigate: this.router.navigate([''])
+      }
+      return null;
+    } else {
+      const id = this.activatedRoute.snapshot.params['id'];
+      this.hssService.update(id, this.hss).subscribe(data => {
+        this.router.navigate(['']);
+      }, err => {
+        alert(err.error.msg || "Error al editar la habilidad.");
+        this.router.navigate(['']);
+      })
+    }
+
   }
 }

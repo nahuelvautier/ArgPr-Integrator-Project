@@ -21,12 +21,21 @@ export class NewSoftSkillComponent implements OnInit {
   onCreate(): void {
     const hss = new HSS(this.hsPercent, this.hsTitle, this.hsImage);
 
-    this.hssService.save(hss).subscribe(data => {
-      alert("Habilidad añadida con éxito.");
-      this.router.navigate(['']);
-    }, err => {
-      alert(err.error.msg || "Error al añadir la habilidad.");
-      this.router.navigate(['']);
-    })
+    if (!this.hsTitle) {
+      throw {
+        alert: alert("El nombre de la habilidad es requerido."),
+        navigate: this.router.navigate([''])
+      }
+      return null;
+    } else {
+      this.hssService.save(hss).subscribe(data => {
+        alert("Habilidad añadida con éxito.");
+        this.router.navigate(['']);
+      }, err => {
+        alert(err.error.msg || "Error al añadir la habilidad.");
+        this.router.navigate(['']);
+      })
+    }
+
   }
 }
